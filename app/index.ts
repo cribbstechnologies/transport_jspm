@@ -26,13 +26,10 @@ export class TransportApp {
   constructor(agentService: AgentService) {
     this.name = 'Alice';
     this.agents = agentService.getAgents();
-    console.log("Creating the transport app");
   }
 }
-console.log("Before bootstrap");
 bootstrap(TransportApp , [
    AgentService,
    ROUTER_BINDINGS,
    bind(APP_BASE_HREF).toValue(location.pathname)
  ] );
-console.log("After bootstrap");

@@ -5,21 +5,17 @@
   "main": "index.js",
   "watches": {
     "copy:templates": "app/**/*.html",
-    "dev:build": "app/**/*.ts"
+    "build:ts": "app/**/*.ts"
   },
   "scripts": {
     "clean": "rm -rf public && mkdir public",
     "build:bundle": "jspm bundle-sfx app/index public/app.js",
     "build:uglify": "./node_modules/.bin/uglifyjs public/app.js -o public/app.min.js",
-    "build:html": "./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.min.js -o public/index.html",
-    "build:ts": "npm run build:bundle && npm run build:uglify && npm run build:html",
+    "build:html": "./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.js -o public/index.html",
+    "build:ts": "npm run build:bundle && npm run build:html",
     "build": "npm run build:ts && npm run copy:templates",
     "copy:templates": "node build/copyHtml.js",
-    "dev:build": "node build/buildTypescript.js && parallelshell \"npm run copy:templates\" \"cp index.html public\" \"cp jspm_packages/system.js public\" \"cp jspm_packages/system.js.map public\" \"cp jspm_packages/system-polyfills.js public\" \"cp config.js public\"",
-    "dev": "npm run dev:build && parallelshell \"cd public && live-server\" \"rerun-script\"",
-    "watch": "rerun-script",
-    "start": "npm run dev",
-    "self-start": "npm run build && cd public && live-server"
+    "start": "npm run build && parallelshell \"cd public && live-server\" \"rerun-script\""
   },
   "author": "",
   "license": "ISC",

@@ -13,7 +13,7 @@ export class Agent {
 
 export class AgentService {
 	getAgents() {
-		console.log("I'm no longer returning a list of dead guys");
+		console.log("I'm still returning a list of dead guys");
 		return ['Jimi Hendrix','James Brown'];
 	}
 }
