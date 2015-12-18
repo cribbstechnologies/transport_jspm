@@ -9,9 +9,9 @@
   },
   "scripts": {
     "clean": "rm -rf public",
-    "build:bundle": "jspm bundle-sfx app/index public/dist/app.js",
-    "build:uglify": "./node_modules/.bin/uglifyjs public/dist/app.js -o public/dist/app.min.js",
-    "build:html": "./node_modules/.bin/html-dist app/index.html --remove-all --minify --insert app.min.js -o public/dist/index.html",
+    "build:bundle": "jspm bundle-sfx app/index public/app.js",
+    "build:uglify": "./node_modules/.bin/uglifyjs public/app.js -o public/app.min.js",
+    "build:html": "./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.min.js -o public/index.html",
     "build:ts": "npm run build:bundle && npm run build:uglify && npm run build:html",
     "copy:templates": "node build/copyHtml.js",
     "build": "npm run build:ts && npm run copy:templates",
