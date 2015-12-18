@@ -1,0 +1,14 @@
+<transport-app></transport-app><div class="row">
+  <div class="small-12 columns">
+    <h3>Hello from app {{name}}</h3>
+    <h4>Agents: {{agents}}</h4>
+    <ul>
+      <li>Filler</li>
+      <li><a [routerLink]="['./Home']">Home</a></li>
+      <li><a [routerLink]="['./Agent']">Agent</a></li>
+    </ul>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

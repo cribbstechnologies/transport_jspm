@@ -1,0 +1,42 @@
+{
+  "name": "transport_jspm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watches": {
+    "copy:templates": "app/**/*.html",
+    "build:ts": "app/**/*.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf public",
+    "build:bundle": "jspm bundle-sfx app/index public/dist/app.js",
+    "build:uglify": "./node_modules/.bin/uglifyjs public/dist/app.js -o public/dist/app.min.js",
+    "build:html": "./node_modules/.bin/html-dist app/index.html --remove-all --minify --insert app.min.js -o public/dist/index.html",
+    "build:ts": "npm run build:bundle && npm run build:uglify && npm run build:html",
+    "copy:templates": "node build/copyHtml.js",
+    "build": "npm run build:ts && npm run copy:templates",
+    "dev": "npm run build && parallelshell \"cd public && live-server\" \"rerun-script\"",
+    "watch": "rerun-script",
+    "start": "npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-beta.0",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "typescript": "npm:typescript@^1.6.2"
+    },
+    "devDependencies": {}
+  },
+  "devDependencies": {
+    "cpr": "^1.0.0",
+    "fs-extra": "^0.26.3",
+    "html-dist": "^0.1.0",
+    "http-server": "^0.8.5",
+    "jspm": "^0.16.19",
+    "parallelshell": "^2.0.0",
+    "rerun-script": "^0.6.0",
+    "uglifyjs": "^2.4.10"
+  }
+}
