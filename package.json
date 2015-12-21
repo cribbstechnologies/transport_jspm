@@ -28,7 +28,6 @@
     "devDependencies": {}
   },
   "devDependencies": {
-    "cpr": "^1.0.0",
     "fs-extra": "^0.26.3",
     "html-dist": "^0.1.0",
     "http-server": "^0.8.5",
