@@ -15,7 +15,7 @@
     "build:ts": "npm run build:bundle && npm run build:html",
     "build": "npm run build:ts && npm run copy:templates",
     "copy:templates": "node build/copyHtml.js",
-    "start": "npm run build && parallelshell \"cd public && live-server\" \"rerun-script\""
+    "start": "npm run build &&  concurrent --kill-others \"node build/runServer.js\" \"rerun-script\""
   },
   "author": "",
   "license": "ISC",
@@ -28,10 +28,11 @@
     "devDependencies": {}
   },
   "devDependencies": {
+    "concurrently": "^1.0.0",
     "fs-extra": "^0.26.3",
     "html-dist": "^0.1.0",
-    "http-server": "^0.8.5",
     "jspm": "^0.16.19",
+    "live-server": "^0.9.0",
     "parallelshell": "^2.0.0",
     "rerun-script": "^0.6.0",
     "uglifyjs": "^2.4.10"

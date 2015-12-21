@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import 'reflect-metadata'
 
 import {bootstrap} from 'angular2/bootstrap';
 import {bind, Component, View} from 'angular2/core';
