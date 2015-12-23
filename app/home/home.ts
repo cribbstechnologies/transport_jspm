@@ -5,7 +5,7 @@ import {Component, View} from 'angular2/core';
 	selector: 'home'
 })
 @View({
-	templateUrl: '../home/index.html'
+	templateUrl: 'home/index.html'
 })
 export class Home {
 }

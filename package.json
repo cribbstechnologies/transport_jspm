@@ -10,9 +10,9 @@
   "scripts": {
     "clean": "rm -rf public && mkdir public",
     "clean:dev": "&& rm -f app.js rm -f app.map && rm app.js.map",
-    "build:bundle": "jspm bundle-sfx app/index public/app.js",
+    "build:bundle": "jspm bundle-sfx app/main/main public/main/main.js",
     "build:uglify": "./node_modules/.bin/uglifyjs public/app.js -o public/app.min.js",
-    "build:html": "./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.js -o public/index.html",
+    "build:html": "./node_modules/.bin/html-dist index.html --remove-all --minify --insert main/main.js -o public/index.html",
     "build:ts": "npm run build:bundle && npm run build:html",
     "build": "npm run build:ts && npm run copy:templates",
     "build:dev": "jspm bundle app/index public/app.js",

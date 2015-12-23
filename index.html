@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Open Sauce</title>
-    <script src="https://code.angularjs.org/tools/traceur-runtime.js"></script>
+
+<head>
+  <title>Foundation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <transport-app>
+    Loading...
+  </transport-app>
+  <script src="https://code.angularjs.org/tools/traceur-runtime.js"></script>
     <script src="system.js"></script>
     <script src="config.js"></script>
-    <script>
-      System.import('app');
-    </script>
-  </head>
-  <body>
-    <transport-app>
-    </transport-app>
-  </body>
+  <script>
+    System.import('app/main/main');
+  </script>
+</body>
 </html>
