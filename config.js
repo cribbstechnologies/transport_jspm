@@ -7,8 +7,7 @@ System.config({
   },
   paths: {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*",
-    "app": "app/index"
+    "npm:*": "jspm_packages/npm/*"
   },
   compilerOptions: {
     "target": "ES5",
@@ -40,6 +39,8 @@ System.config({
   map: {
     "angular-route": "github:angular/bower-angular-route@1.4.8",
     "angular2": "npm:angular2@2.0.0-beta.0",
+    "foundation": "github:zurb/bower-foundation@5.5.3",
+    "jquery": "github:components/jquery@2.1.4",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "typescript": "npm:typescript@1.7.5",
     "github:angular/bower-angular-route@1.4.8": {
@@ -77,6 +78,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:zurb/bower-foundation@5.5.3": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:angular2@2.0.0-beta.0": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",

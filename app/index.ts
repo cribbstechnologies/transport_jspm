@@ -7,6 +7,9 @@ import {RouteConfig, RouteParams, ROUTER_DIRECTIVES, APP_BASE_HREF, ROUTER_BINDI
 import {Home} from './home/home';
 import {Agent,AgentService} from './agent/agent';
 
+import foundation from 'foundation';
+
+$(document).foundation();
 
 @Component({
   selector: 'transport-app'

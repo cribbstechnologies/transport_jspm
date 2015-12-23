@@ -9,11 +9,15 @@
   },
   "scripts": {
     "clean": "rm -rf public && mkdir public",
+    "clean:dev": "&& rm -f app.js rm -f app.map && rm app.js.map",
     "build:bundle": "jspm bundle-sfx app/index public/app.js",
     "build:uglify": "./node_modules/.bin/uglifyjs public/app.js -o public/app.min.js",
     "build:html": "./node_modules/.bin/html-dist index.html --remove-all --minify --insert app.js -o public/index.html",
     "build:ts": "npm run build:bundle && npm run build:html",
     "build": "npm run build:ts && npm run copy:templates",
+    "build:dev": "jspm bundle app/index public/app.js",
+    "copy:dev": "node build/copyHtml.js && cp index.html public && cp node_modules/systemjs/dist/system.js public && cp node_modules/systemjs/dist/system.js.map public && cp config.js public",
+    "dev": "npm run build:dev && npm run copy:dev && node build/runServer.js",
     "copy:templates": "node build/copyHtml.js",
     "start": "npm run build &&  concurrent --kill-others \"node build/runServer.js\" \"rerun-script\""
   },
@@ -22,6 +26,8 @@
   "jspm": {
     "dependencies": {
       "angular2": "npm:angular2@^2.0.0-beta.0",
+      "foundation": "github:zurb/bower-foundation@^5.5.3",
+      "jquery": "github:components/jquery@^2.1.4",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "typescript": "npm:typescript@^1.6.2"
     },
